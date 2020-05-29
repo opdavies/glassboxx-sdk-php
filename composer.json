@@ -1,0 +1,13 @@
+{
+    "name": "opdavies/glassboxx-sdk-php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oliver Davies",
+            "email": "oliver@oliverdavies.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
