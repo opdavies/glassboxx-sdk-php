@@ -9,7 +9,9 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "symfony/http-client": "^5.0"
+    },
     "autoload": {
         "psr-4": {
             "Opdavies\\Glassboxx\\": "src/Glassboxx/"
