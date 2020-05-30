@@ -3,7 +3,7 @@
 namespace Opdavies\Glassboxx\Tests\Glassboxx\Request;
 
 use Opdavies\Glassboxx\Config;
-use Opdavies\Glassboxx\Request\AuthTokenAbstractRequest;
+use Opdavies\Glassboxx\Request\AuthTokenRequest;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Contracts\HttpClient\ResponseInterface;
@@ -32,8 +32,8 @@ class AuthTokenRequestTest extends TestCase
             ->method('request')
             ->with(
                 'POST',
-                AuthTokenAbstractRequest::BASE_URL
-                .AuthTokenAbstractRequest::ENDPOINT,
+                AuthTokenRequest::BASE_URL
+                .AuthTokenRequest::ENDPOINT,
                 [
                     'query' => [
                         'password' => 'secret',
@@ -43,7 +43,7 @@ class AuthTokenRequestTest extends TestCase
             )
             ->willReturn($mockRepsonse);
 
-        $token = (new AuthTokenAbstractRequest($client))
+        $token = (new AuthTokenRequest($client))
             ->withConfig($config)
             ->getToken();
 

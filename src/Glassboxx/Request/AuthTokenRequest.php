@@ -6,7 +6,7 @@ use Opdavies\Glassboxx\Config;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-final class AuthTokenAbstractRequest extends AbstractRequest
+final class AuthTokenRequest extends AbstractRequest
 {
     public const ENDPOINT = '/integration/admin/token';
 
