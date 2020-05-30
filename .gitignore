@@ -3,5 +3,6 @@
 !/.github/**
 !/.gitignore
 !/composer.json
+!/Makefile
 !/src/**
 !/tests/**
