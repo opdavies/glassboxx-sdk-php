@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Opdavies\Glassboxx\Request;
 
+use Opdavies\Glassboxx\Traits\UsesAuthTokenTrait;
 use Opdavies\Glassboxx\ValueObject\CustomerInterface;
 
 final class CustomerRequest extends AbstractRequest
 {
+    use UsesAuthTokenTrait;
+
     public const ENDPOINT = '/glassboxxorder/customCustomer';
 
     /** @var string */
@@ -19,13 +22,6 @@ final class CustomerRequest extends AbstractRequest
     public function forCustomer(CustomerInterface $customer): self
     {
         $this->customer = $customer;
-
-        return $this;
-    }
-
-    public function withAuthToken(string $authToken): self
-    {
-        $this->authToken = $authToken;
 
         return $this;
     }
