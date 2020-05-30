@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Opdavies\Glassboxx\Request;
 
-use Opdavies\Glassboxx\Config;
-use Symfony\Component\HttpClient\HttpClient;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
-
 final class AuthTokenRequest extends AbstractRequest implements AuthTokenRequestInterface
 {
     public function getToken(): string

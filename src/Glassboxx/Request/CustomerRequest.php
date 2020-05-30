@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Opdavies\Glassboxx\Request;
 
-use Opdavies\Glassboxx\Config;
-use Opdavies\Glassboxx\ValueObject\Customer;
 use Opdavies\Glassboxx\ValueObject\CustomerInterface;
-use Symfony\Component\HttpClient\HttpClient;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final class CustomerRequest extends AbstractRequest
 {
