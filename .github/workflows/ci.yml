@@ -5,7 +5,7 @@ on:
   push:
 
 jobs:
-  phpunit:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -37,4 +37,4 @@ jobs:
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
 
       - name: Execute tests
-        run: vendor/bin/phpunit tests --testdox --color=always
+        run: make test
