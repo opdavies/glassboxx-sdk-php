@@ -6,4 +6,7 @@ phpcs:
 phpunit:
 	php vendor/bin/phpunit -v --color=always --testdox tests
 
-test: phpunit phpcs
+test: phpunit phpcs yamllint
+
+yamllint:
+	yamllint .github/
