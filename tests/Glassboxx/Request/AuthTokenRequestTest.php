@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Opdavies\Glassboxx\Tests\Glassboxx\Request;
 
-use Opdavies\Glassboxx\Config;
+use Opdavies\Glassboxx\ConfigInterface;
 use Opdavies\Glassboxx\Request\AuthTokenRequest;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
@@ -14,7 +14,7 @@ class AuthTokenRequestTest extends TestCase
 {
     public function testThatItGetsAnAuthCode(): void
     {
-        $config = $this->getMockBuilder(Config::class)
+        $config = $this->getMockBuilder(ConfigInterface::class)
             ->onlyMethods([])
             ->setConstructorArgs(
                 [

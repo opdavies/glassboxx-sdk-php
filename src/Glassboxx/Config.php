@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Opdavies\Glassboxx;
 
-class Config
+final class Config implements ConfigInterface
 {
     /** @var int $vendorId */
     private $vendorId;

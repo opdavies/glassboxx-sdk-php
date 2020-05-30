@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Opdavies\Glassboxx\Request;
 
-use Opdavies\Glassboxx\Config;
+use Opdavies\Glassboxx\ConfigInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -12,7 +12,7 @@ final class AuthTokenRequest extends AbstractRequest
 {
     public const ENDPOINT = '/integration/admin/token';
 
-    /** @var Config */
+    /** @var ConfigInterface */
     private $config;
 
     /** @var HttpClient */
@@ -23,7 +23,7 @@ final class AuthTokenRequest extends AbstractRequest
         $this->client = $client;
     }
 
-    public function withConfig(Config $config): self
+    public function withConfig(ConfigInterface $config): self
     {
         $this->config = $config;
 
