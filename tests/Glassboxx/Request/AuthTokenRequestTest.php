@@ -25,9 +25,9 @@ class AuthTokenRequestTest extends TestCase
             )
             ->getMock();
 
-        $mockRepsonse = $this->getMockBuilder(ResponseInterface::class)
+        $mockResponse = $this->getMockBuilder(ResponseInterface::class)
             ->getMock();
-        $mockRepsonse->method('getContent')->willReturn('"abc123"');
+        $mockResponse->method('getContent')->willReturn('"abc123"');
 
         $client = $this->getMockBuilder(MockHttpClient::class)->getMock();
         $client->expects($this->once())
@@ -43,7 +43,7 @@ class AuthTokenRequestTest extends TestCase
                     ],
                 ]
             )
-            ->willReturn($mockRepsonse);
+            ->willReturn($mockResponse);
 
         $token = (new AuthTokenRequest($client))
             ->withConfig($config)
