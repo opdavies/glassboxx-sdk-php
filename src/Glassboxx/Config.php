@@ -16,10 +16,10 @@ class Config
     private $password;
 
     public function __construct(
-		int $vendorId,
+        int $vendorId,
         string $username,
         string $password
-	) {
+    ) {
         $this->password = $password;
         $this->username = $username;
         $this->vendorId = $vendorId;
