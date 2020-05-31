@@ -7,6 +7,7 @@ namespace Opdavies\Glassboxx\Tests\Glassboxx\Request;
 use Opdavies\Glassboxx\Request\AuthTokenRequestInterface;
 use Opdavies\Glassboxx\Request\CustomerRequest;
 use Opdavies\Glassboxx\Tests\Glassboxx\TestCase;
+use Opdavies\Glassboxx\Traits\UsesCreatedAtTrait;
 use Opdavies\Glassboxx\ValueObject\CustomerInterface;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Contracts\HttpClient\ResponseInterface;
@@ -49,15 +50,8 @@ final class CustomerRequestTest extends TestCase
             )
             ->willReturn($response);
 
-        $customer = $this->getMockBuilder(CustomerInterface::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $customer->method('getFirstName')->willReturn('Oliver');
-        $customer->method('getLastName')->willReturn('Davies');
-        $customer->method('getEmailAddress')->willReturn('oliver@oliverdavies.uk');
-
         $request = (new CustomerRequest($client))
-            ->forCustomer($customer)
+            ->forCustomer($this->getMockCustomer())
             ->withAuthToken($authTokenRequest->getToken())
             ->withConfig($this->config);
 
