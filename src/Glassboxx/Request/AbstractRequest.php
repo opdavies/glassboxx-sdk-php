@@ -15,7 +15,7 @@ abstract class AbstractRequest
 
     public const BASE_URL = 'https://server.glassboxx.co.uk';
 
-    /** @var HttpClient */
+    /** @var HttpClientInterface */
     protected $client;
 
     public function __construct(HttpClientInterface $client = null)

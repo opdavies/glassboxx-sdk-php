@@ -8,13 +8,14 @@ use Opdavies\Glassboxx\Enum\InteractionType;
 use Opdavies\Glassboxx\Traits\UsesAuthTokenTrait;
 use Opdavies\Glassboxx\Traits\UsesCreatedAtTrait;
 use Opdavies\Glassboxx\ValueObject\OrderInterface;
+use RuntimeException;
 
 class OrderRequest extends AbstractRequest implements OrderRequestInterface
 {
     use UsesCreatedAtTrait;
     use UsesAuthTokenTrait;
 
-    /** @var OrderInterface */
+    /** @var OrderInterface|null */
     private $order;
 
     public function forOrder(OrderInterface $order): AbstractRequest
@@ -26,6 +27,18 @@ class OrderRequest extends AbstractRequest implements OrderRequestInterface
 
     public function execute(): string
     {
+        if (!$this->config) {
+            throw new RuntimeException('There is no config');
+        }
+
+        if (!$this->order) {
+            throw new RuntimeException('There is no order');
+        }
+
+        if (!$this->order->getCustomer()) {
+            throw new RuntimeException('There is no customer');
+        }
+
         $body = [
             'items' => [
                 [

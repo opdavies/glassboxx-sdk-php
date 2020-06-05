@@ -8,7 +8,7 @@ use Opdavies\Glassboxx\Config;
 
 trait UsesConfigTrait
 {
-    /** @var Config */
+    /** @var Config|null */
     protected $config;
 
     public function withConfig(Config $config): self

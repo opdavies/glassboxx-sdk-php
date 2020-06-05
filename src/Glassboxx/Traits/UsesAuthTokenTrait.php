@@ -6,6 +6,7 @@ namespace Opdavies\Glassboxx\Traits;
 
 trait UsesAuthTokenTrait
 {
+    /** @var string|null */
     protected $authToken;
 
     public function withAuthToken(string $authToken): self

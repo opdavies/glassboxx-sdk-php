@@ -6,12 +6,13 @@ namespace Opdavies\Glassboxx\Request;
 
 use Opdavies\Glassboxx\Traits\UsesAuthTokenTrait;
 use Opdavies\Glassboxx\ValueObject\CustomerInterface;
+use RuntimeException;
 
 final class CustomerRequest extends AbstractRequest implements CustomerRequestInterface
 {
     use UsesAuthTokenTrait;
 
-    /** @var CustomerInterface */
+    /** @var CustomerInterface|null */
     protected $customer;
 
     public function forCustomer(CustomerInterface $customer): AbstractRequest
@@ -23,6 +24,14 @@ final class CustomerRequest extends AbstractRequest implements CustomerRequestIn
 
     public function execute(): string
     {
+        if (!$this->config) {
+            throw new RuntimeException('There is no config');
+        }
+
+        if (!$this->customer) {
+            throw new RuntimeException('There is no customer');
+        }
+
         $body = [
             'customer' => [
                 'created_in' => $this->config->getVendorId(),
