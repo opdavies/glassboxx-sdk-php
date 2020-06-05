@@ -16,11 +16,7 @@ final class CustomerRequestTest extends TestCase
 {
     public function testThatItCreatesACustomer(): void
     {
-        $authTokenRequest = $this->getMockBuilder(AuthTokenRequestInterface::class)
-            ->getMock();
-        $authTokenRequest->expects($this->any())
-            ->method('getToken')
-            ->willReturn('testtoken');
+        $authTokenRequest = $this->getMockAuthTokenRequest();
 
         $response = $this->getMockBuilder(ResponseInterface::class)
             ->getMock();
