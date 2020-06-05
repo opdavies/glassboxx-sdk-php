@@ -26,7 +26,7 @@ final class OrderRequestTest extends TestCase
                     'duration_for_loan' => 0,
                     'hostname' => 123,
                     'original_order_number' => 'abc123',
-                    'price_incl_tax' => 100,
+                    'price_incl_tax' => 7.99,
                     'sku' => 'this-is-the-first-sku',
                     'type_of_interaction' => 'purchase',
                 ],

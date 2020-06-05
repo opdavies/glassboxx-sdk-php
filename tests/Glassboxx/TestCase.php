@@ -60,7 +60,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
         $order->method('getCurrencyCode')->willReturn('GBP');
         $order->method('getCustomer')->willReturn($this->getMockCustomer());
         $order->method('getOrderNumber')->willReturn('abc123');
-        $order->method('getPrice')->willReturn((float) 100);
+        $order->method('getPrice')->willReturn(7.99);
         $order->method('getSku')->willReturn('this-is-the-first-sku');
 
         return $order;
