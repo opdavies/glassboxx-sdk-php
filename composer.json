@@ -1,5 +1,6 @@
 {
     "name": "opdavies/glassboxx-sdk-php",
+    "description": "A PHP SDK for creating customers and orders in Glassboxx.",
     "type": "library",
     "license": "MIT",
     "authors": [

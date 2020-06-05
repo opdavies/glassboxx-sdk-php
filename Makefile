@@ -1,6 +1,6 @@
 .PHONY: *
 
-static-code-analysis:
+static-code-analysis: vendor
 	php vendor/bin/psalm --show-info=true
 
 phpcs:
@@ -10,3 +10,7 @@ phpunit:
 	php vendor/bin/phpunit -v --color=always --testdox tests
 
 test: phpunit phpcs
+
+vendor: composer.json
+	composer validate --strict
+	composer install
