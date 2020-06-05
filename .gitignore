@@ -6,5 +6,6 @@
 !/composer.json
 !/Makefile
 !/psalm.xml
+!/README.md
 !/src/**
 !/tests/**
