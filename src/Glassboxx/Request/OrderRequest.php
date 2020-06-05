@@ -47,7 +47,7 @@ class OrderRequest extends AbstractRequest implements OrderRequestInterface
 
         $response = $this->client->request(
             'POST',
-            self::BASE_URL . self::ENDPOINT,
+            self::ENDPOINT,
             [
                 'auth_bearer' => $this->authToken,
                 'headers' => [

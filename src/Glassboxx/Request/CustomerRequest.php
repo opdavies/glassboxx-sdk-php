@@ -34,7 +34,7 @@ final class CustomerRequest extends AbstractRequest implements CustomerRequestIn
 
         $response = $this->client->request(
             'POST',
-            self::BASE_URL . self::ENDPOINT,
+            self::ENDPOINT,
             [
                 'auth_bearer' => $this->authToken,
                 'headers' => [

@@ -6,7 +6,7 @@ namespace Opdavies\Glassboxx\Request;
 
 interface AuthTokenRequestInterface
 {
-    public const ENDPOINT = '/integration/admin/token';
+    public const ENDPOINT = '/rest/V1/integration/admin/token';
 
     public function getToken(): string;
 }

@@ -22,8 +22,7 @@ class AuthTokenRequestTest extends TestCase
             ->method('request')
             ->with(
                 'POST',
-                AuthTokenRequest::BASE_URL
-                .AuthTokenRequest::ENDPOINT,
+                AuthTokenRequest::ENDPOINT,
                 [
                     'query' => [
                         'password' => 'secret',

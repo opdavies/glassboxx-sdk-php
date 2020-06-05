@@ -8,7 +8,7 @@ use Opdavies\Glassboxx\ValueObject\OrderInterface;
 
 interface OrderRequestInterface
 {
-    public const ENDPOINT = '/glassboxxorder/toglassboxx';
+    public const ENDPOINT = '/rest/V1/glassboxxorder/toglassboxx';
 
     public function forOrder(OrderInterface $order): AbstractRequest;
 

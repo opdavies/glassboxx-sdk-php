@@ -10,7 +10,7 @@ final class AuthTokenRequest extends AbstractRequest implements AuthTokenRequest
     {
         $response = $this->client->request(
             'POST',
-            self::BASE_URL.self::ENDPOINT,
+            self::ENDPOINT,
             [
                 'query' => [
                     'password' => $this->config->getPassword(),

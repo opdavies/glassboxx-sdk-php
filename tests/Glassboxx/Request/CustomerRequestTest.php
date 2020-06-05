@@ -31,8 +31,7 @@ final class CustomerRequestTest extends TestCase
             ->method('request')
             ->with(
                 'POST',
-                CustomerRequest::BASE_URL
-                .CustomerRequest::ENDPOINT,
+                CustomerRequest::ENDPOINT,
                 [
                     'auth_bearer' => $authTokenRequest->getToken(),
                     'headers' => [

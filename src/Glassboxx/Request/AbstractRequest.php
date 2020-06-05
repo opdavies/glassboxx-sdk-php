@@ -13,13 +13,17 @@ abstract class AbstractRequest
 {
     use UsesConfigTrait;
 
-    public const BASE_URL = 'https://server.glassboxx.co.uk/rest/V1';
+    public const BASE_URL = 'https://server.glassboxx.co.uk';
 
     /** @var HttpClient */
     protected $client;
 
-    public function __construct(HttpClientInterface $client)
+    public function __construct(HttpClientInterface $client = null)
     {
+        if (!$client) {
+            $client = HttpClient::createForBaseUri(self::BASE_URL);
+        }
+
         $this->client = $client;
     }
 }

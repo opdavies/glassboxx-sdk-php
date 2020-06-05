@@ -8,7 +8,7 @@ use Opdavies\Glassboxx\ValueObject\CustomerInterface;
 
 interface CustomerRequestInterface
 {
-    public const ENDPOINT = '/glassboxxorder/customCustomer';
+    public const ENDPOINT = '/rest/V1/glassboxxorder/customCustomer';
 
     public function forCustomer(CustomerInterface $customer): AbstractRequest;
 

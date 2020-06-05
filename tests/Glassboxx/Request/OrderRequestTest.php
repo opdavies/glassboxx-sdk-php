@@ -43,8 +43,7 @@ final class OrderRequestTest extends TestCase
             ->method('request')
             ->with(
                 'POST',
-                OrderRequest::BASE_URL
-                .OrderRequest::ENDPOINT,
+                OrderRequest::ENDPOINT,
                 [
                     'auth_bearer' => $authTokenRequest->getToken(),
                     'headers' => [
