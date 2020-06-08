@@ -10,29 +10,19 @@ final class Order implements OrderInterface
     private $customer;
 
     /** @var string */
-    private $sku;
-
-    /** @var string */
     private $orderNumber;
 
     /** @var string */
     private $currencyCode;
 
-    /** @var float */
-    private $price;
-
     public function __construct(
         CustomerInterface $customer,
-        string $sku,
         string $orderNumber,
-        string $currencyCode,
-        float $price
+        string $currencyCode
     ) {
         $this->customer = $customer;
-        $this->sku = $sku;
         $this->orderNumber = $orderNumber;
         $this->currencyCode = $currencyCode;
-        $this->price = $price;
     }
 
     public function getCurrencyCode(): string
@@ -48,15 +38,5 @@ final class Order implements OrderInterface
     public function getOrderNumber(): string
     {
         return $this->orderNumber;
-    }
-
-    public function getPrice(): float
-    {
-        return $this->price;
-    }
-
-    public function getSku(): string
-    {
-        return $this->sku;
     }
 }

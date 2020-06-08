@@ -12,5 +12,7 @@ interface OrderRequestInterface
 
     public function forOrder(OrderInterface $order): AbstractRequest;
 
+    public function withOrderItems(array $orderItems): AbstractRequest;
+
     public function execute(): string;
 }

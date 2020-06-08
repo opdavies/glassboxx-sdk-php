@@ -7,6 +7,7 @@ namespace Opdavies\Glassboxx\Tests\Glassboxx\Request;
 use DateTime;
 use Opdavies\Glassboxx\Request\OrderRequest;
 use Opdavies\Glassboxx\Tests\Glassboxx\TestCase;
+use Opdavies\Glassboxx\ValueObject\OrderItemInterface;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -56,11 +57,22 @@ final class OrderRequestTest extends TestCase
 
         $request = (new OrderRequest($client))
             ->forOrder($this->getMockOrder())
+            ->withOrderItems([$this->getMockOrderItem()])
             ->withAuthToken($authTokenRequest->getToken())
             ->withConfig($this->config)
             ->setCreatedDate('2020-06-04 12:00:00');
 
         // A successful response returns the original body.
         $this->assertSame(json_encode($body), $request->execute());
+    }
+
+    private function getMockOrderItem(): OrderItemInterface
+    {
+        $orderItem = $this->getMockBuilder(OrderItemInterface::class)
+            ->getMock();
+        $orderItem->method('getPrice')->willReturn(7.99);
+        $orderItem->method('getSku')->willReturn('this-is-the-first-sku');
+
+        return $orderItem;
     }
 }

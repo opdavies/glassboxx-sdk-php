@@ -19,16 +19,12 @@ class OrderTest extends TestCase
 
         $order = new Order(
             $customer,
-            'this-is-the-sku',
             '123',
-            'GBP',
-            10.00
+            'GBP'
         );
 
         $this->assertSame('GBP', $order->getCurrencyCode());
         $this->assertSame($customer, $order->getCustomer());
         $this->assertSame('123', $order->getOrderNumber());
-        $this->assertSame(10.0, $order->getPrice());
-        $this->assertSame('this-is-the-sku', $order->getSku());
     }
 }
