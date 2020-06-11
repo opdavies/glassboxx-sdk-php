@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Opdavies\Glassboxx\Tests\Glassboxx\ValueObject;
+namespace Opdavies\Glassboxx\Tests\ValueObject;
 
-use Opdavies\Glassboxx\Tests\Glassboxx\TestCase;
+use Opdavies\Glassboxx\Tests\TestCase;
 use Opdavies\Glassboxx\ValueObject\Customer;
 use Opdavies\Glassboxx\ValueObject\CustomerInterface;
 use Opdavies\Glassboxx\ValueObject\Order;

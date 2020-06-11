@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Opdavies\Glassboxx\Tests\Glassboxx\Request;
+namespace Opdavies\Glassboxx\Tests\Request;
 
 use Opdavies\Glassboxx\Request\AuthTokenRequest;
-use Opdavies\Glassboxx\Tests\Glassboxx\TestCase;
+use Opdavies\Glassboxx\Tests\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 

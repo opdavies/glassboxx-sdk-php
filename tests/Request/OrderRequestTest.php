@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Opdavies\Glassboxx\Tests\Glassboxx\Request;
+namespace Opdavies\Glassboxx\Tests\Request;
 
 use DateTime;
 use Opdavies\Glassboxx\Request\OrderRequest;
-use Opdavies\Glassboxx\Tests\Glassboxx\TestCase;
+use Opdavies\Glassboxx\Tests\TestCase;
 use Opdavies\Glassboxx\ValueObject\OrderItemInterface;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Contracts\HttpClient\ResponseInterface;

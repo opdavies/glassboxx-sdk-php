@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Opdavies\Glassboxx\Tests\Glassboxx;
+namespace Opdavies\Glassboxx\Tests;
 
 use Opdavies\Glassboxx\Config;
 use PHPUnit\Framework\TestCase;

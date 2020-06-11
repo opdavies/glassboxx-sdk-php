@@ -1,6 +1,6 @@
 <?php
 
-namespace Opdavies\Glassboxx\Tests\Glassboxx;
+namespace Opdavies\Glassboxx\Tests;
 
 use Opdavies\Glassboxx\Config;
 use Opdavies\Glassboxx\Request\AuthTokenRequestInterface;

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Opdavies\Glassboxx\Tests\Glassboxx\Request;
+namespace Opdavies\Glassboxx\Tests\Request;
 
 use Opdavies\Glassboxx\Request\AuthTokenRequestInterface;
 use Opdavies\Glassboxx\Request\CustomerRequest;
-use Opdavies\Glassboxx\Tests\Glassboxx\TestCase;
+use Opdavies\Glassboxx\Tests\TestCase;
 use Opdavies\Glassboxx\Traits\UsesCreatedAtTrait;
 use Opdavies\Glassboxx\ValueObject\CustomerInterface;
 use Symfony\Component\HttpClient\MockHttpClient;
