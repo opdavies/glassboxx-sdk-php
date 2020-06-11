@@ -10,6 +10,10 @@ TODO
 
 MIT
 
+## Contributing
+
+Pull requests are welcome. Please fork the repository, create a new branch with the changes, and submit a pull request to the `main` branch.
+
 ## Author
 
 [Oliver Davies](https://www.oliverdavies.uk), PHP Developer.
