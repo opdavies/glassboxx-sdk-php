@@ -1,13 +1,16 @@
+PATH:=${PATH}:vendor/bin
+
 .PHONY: *
 
-static-code-analysis: vendor
-	php vendor/bin/psalm --show-info=true
+static-code-analysis:
+	psalm --show-info=true
 
 phpcs:
-	php vendor/bin/phpcs --standard=PSR2 src tests
+	phpcs --standard=PSR2 src tests
 
 phpunit:
-	php vendor/bin/phpunit -v --color=always --testdox tests
+	echo ${PATH}
+	phpunit -v --color=always --testdox tests
 
 test: phpunit phpcs
 
