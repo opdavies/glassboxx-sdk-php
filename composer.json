@@ -12,6 +12,7 @@
     "minimum-stability": "stable",
     "require": {
         "ext-json": "*",
+        "beberlei/assert": "^3.2",
         "symfony/http-client": "^5.0"
     },
     "autoload": {
