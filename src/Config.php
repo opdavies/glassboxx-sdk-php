@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Opdavies\Glassboxx;
 
+use Assert\Assert;
+
 class Config
 {
     /** @var int $vendorId */
@@ -20,6 +22,12 @@ class Config
         string $username,
         string $password
     ) {
+        Assert::that($vendorId)
+            ->greaterOrEqualThan(1, 'Vendor ID cannot be a negative number');
+
+        Assert::that($username)->notEmpty('Username cannot be empty');
+        Assert::that($password)->notEmpty('Password cannot be empty');
+
         $this->password = $password;
         $this->username = $username;
         $this->vendorId = $vendorId;
